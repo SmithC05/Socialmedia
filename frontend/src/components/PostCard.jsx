@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import api from '../api/axios';
+import api, { backendUrl } from '../api/axios';
 import CommentSection from './CommentSection';
 import './PostCard.css';
 
@@ -119,7 +119,7 @@ export default function PostCard({ post, onUpdate, onDelete }) {
       {post.imageUrl && (
         <div className="post-card-image-wrap">
           <img
-            src={post.imageUrl}
+            src={(post.imageUrl.startsWith('/') && backendUrl !== '') ? `${backendUrl}${post.imageUrl}` : post.imageUrl}
             alt="Post image"
             className="post-card-image"
             loading="lazy"
