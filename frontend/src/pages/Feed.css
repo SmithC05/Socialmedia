@@ -1,0 +1,75 @@
+/* Feed Page */
+.feed-page {
+  padding: 24px 0 60px;
+}
+
+/* Guest Banner */
+.feed-guest-banner {
+  padding: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, #ebedfd, #fde8f2);
+  border: none;
+  flex-wrap: wrap;
+}
+.feed-guest-banner p { font-size: 15px; color: var(--text-primary); }
+.feed-guest-actions { display: flex; gap: 10px; }
+
+/* Tabs */
+.feed-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.feed-tabs::-webkit-scrollbar { display: none; }
+
+.feed-tab {
+  white-space: nowrap;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.feed-tab:hover { border-color: var(--primary); color: var(--primary); }
+.feed-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* States */
+.feed-error {
+  text-align: center;
+  color: var(--danger);
+  padding: 24px;
+  font-size: 15px;
+}
+
+.feed-empty {
+  text-align: center;
+  padding: 60px 24px;
+}
+.feed-empty-icon { font-size: 48px; margin-bottom: 12px; }
+.feed-empty p { font-size: 16px; color: var(--text-secondary); }
+
+/* Load More */
+.feed-load-more {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .feed-guest-banner { flex-direction: column; align-items: flex-start; }
+}
